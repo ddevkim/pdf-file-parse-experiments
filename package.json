@@ -4,10 +4,10 @@
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:f": "webpack serve",
+    "start:b": "nodemon ./server/bin/www --watch server"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
     "css-loader": "^6.9.1",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.7.7",
+    "nodemon": "^3.0.3",
     "postcss-loader": "^8.0.0",
     "prettier": "^3.1.1",
     "sass": "^1.70.0",
@@ -34,7 +35,23 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "axios": "^1.6.5",
     "bootstrap": "^5.3.2",
-    "pdf-parse": "^1.1.1"
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "fxdom": "^0.8.3",
+    "fxjs": "^0.21.3",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^5.0.4",
+    "node-inkscape": "^0.0.1",
+    "pdf-parse": "^1.1.1",
+    "pdf.js-extract": "^0.2.1",
+    "pdf2json": "^3.0.5",
+    "svgson": "^5.3.1"
   }
 }

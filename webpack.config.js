@@ -1,20 +1,19 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
-
+const { DefinePlugin } = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV === "production";
 
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
   : "style-loader";
 
 const config = {
-  entry: "./src/js/main.js",
+  entry: "./web/src/js/main.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "web", "dist"),
   },
   devServer: {
     open: true,
@@ -23,9 +22,16 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./web/src/index.html",
     }),
-
+    new DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(
+        process.env.NODE_ENV || "development",
+      ),
+      "process.env.API_URL": JSON.stringify(
+        process.env.API_URL || "http://localhost:3000",
+      ),
+    }),
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
