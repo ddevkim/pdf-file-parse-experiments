@@ -1,7 +1,7 @@
 {
-  "name": "my-webpack-project",
+  "name": "pdf-file-parse-experiments",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "pdf-file-parse-experiments",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
@@ -9,9 +9,9 @@
     "start:f": "webpack serve",
     "start:b": "nodemon ./server/bin/www --watch server"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["pdf"],
+  "author": "ddevkim@gmail.com",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.23.7",
     "@babel/preset-env": "^7.23.8",
